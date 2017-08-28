@@ -24,7 +24,7 @@ def index():
 	return render_template('index.html', title='Home')
 
 @app.route('/our-mission')
-def vision():
+def mission():
 	return render_template('mission.html', title='Our Mission')
 
 @app.route('/events')
@@ -121,7 +121,7 @@ def ebooks():
 @app.errorhandler(404)
 @app.errorhandler(500)
 def page_not_found(e):
-	return render_template('404.html', title='Page Not Found'), 404
+	return render_template('404.html', title='Page Not Found'), 404cd
 
 if __name__ == '__main__':
 	app.run()
