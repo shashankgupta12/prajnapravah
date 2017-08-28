@@ -1,10 +1,8 @@
 from flask import Flask
 from flask import render_template, request, flash
 from flaskext.mysql import MySQL
-from app import app, cur
 import requests
 import os
-
 
 app = Flask(__name__)
 mysql = MySQL()
