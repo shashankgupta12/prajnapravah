@@ -4,6 +4,11 @@ from flaskext.mysql import MySQL
 import requests
 import os
 
+MYSQL_DATABASE_HOST	= 'us-cdbr-iron-east-05.cleardb.net'
+MYSQL_DATABASE_USER	= 'b644ea1641c355'
+MYSQL_DATABASE_PASSWORD	= '6883ba6d'
+MYSQL_DATABASE_DB = 'heroku_ce775df7aab92ed'
+
 app = Flask(__name__)
 mysql = MySQL()
 mysql.init_app(app)
@@ -12,11 +17,6 @@ cur = db.cursor()
 
 API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
 SECRET_KEY = 'YouKnowNothingJonSnow'
-
-MYSQL_DATABASE_HOST	= 'us-cdbr-iron-east-05.cleardb.net'
-MYSQL_DATABASE_USER	= 'b644ea1641c355'
-MYSQL_DATABASE_PASSWORD	= '6883ba6d'
-MYSQL_DATABASE_DB = 'heroku_ce775df7aab92ed'
 
 @app.route('/')
 # @app.route('/home')
