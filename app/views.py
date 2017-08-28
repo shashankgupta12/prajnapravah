@@ -23,9 +23,9 @@ SECRET_KEY = 'YouKnowNothingJonSnow'
 def index():
 	return render_template('index.html', title='Home')
 
-@app.route('/our-vision')
+@app.route('/our-mission')
 def vision():
-	return render_template('vision.html', title='Our Vision')
+	return render_template('mission.html', title='Our Mission')
 
 @app.route('/events')
 def events():
@@ -54,7 +54,7 @@ def vids():
 	response = requests.get(url)
 	res = response.json()
 	description = res['items'][0]['snippet']['description']
-	link = 'https://www.youtube.com/watch?v={0}'.format(videoId)
+	link = '{0}'.format(videoId)
 	return render_template('vid.html', title='Play Video', videoTitle=videoTitle, description=description, link=link)
 
 @app.route('/videos')
@@ -116,6 +116,12 @@ def ebooks():
 		flash('No ebooks available yet')
 	ebooks = sorted(bookList, key=lambda x: x[1])
 	return render_template('ebooks.html', title='Ebooks', ebooks=ebooks)
+
+@app.errorhandler(403)
+@app.errorhandler(404)
+@app.errorhandler(500)
+def page_not_found(e):
+	return render_template('404.html', title='Page Not Found'), 404
 
 if __name__ == '__main__':
 	app.run()

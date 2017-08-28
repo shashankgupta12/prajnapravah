@@ -4,10 +4,29 @@
 {% endblock %}
 
 {% block body %}
-
-	<p>TITLE: {{ videoTitle }}</p>
-	<p>DESCRIPTION: {{ description }}</p>
-	<p>LINK: {{ link }}</p>
+	<section id="video-gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="section-header">
+				        <h2 class="section-title text-center wow fadeInDown gallery-title">{{ videoTitle }}</h2>
+				    </div>
+				</div>
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for message in messages %}
+							<p>{{ message }}</p>
+						{% endfor %}
+					{% else %}
+						<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+				          <iframe src="https://www.youtube.com/embed/{{link}}" width="95%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				          <p> {{ description }}</p>
+			          </div>
+					{% endif %}
+				{% endwith %}
+			</div>
+		</div>
+	</section>
 
 {% endblock %}
 

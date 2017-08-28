@@ -9,6 +9,9 @@ jQuery(function($) {'use strict';
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
 		return false;
 	});
+	$('.back-button').on('click', function() {
+		window.history.go(-1);
+	}) 
 
 	// User define function
 	// function Scroll() {
@@ -46,6 +49,7 @@ jQuery(function($) {'use strict';
 
 	//Slider
 	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();   
 		var time = 7; // time in seconds
 
 	 	var $progressBar,
@@ -197,6 +201,20 @@ jQuery(function($) {'use strict';
 				$this.unbind('inview');
 			}
 		});
+	});
+
+	$('.increaseSize').on('click', function() {
+		var fontSize = parseInt($('.ourVisionText').css('font-size'));
+		if (fontSize < 26) {
+			$('.ourVisionText').css('font-size', fontSize+2);
+		}
+	});
+
+	$('.decreaseSize').on('click', function() {
+		var fontSize = parseInt($('.ourVisionText').css('font-size'));
+		if(fontSize >12) {
+			$('.ourVisionText').css('font-size', fontSize-2);
+		}
 	});
 
 	// Contact form

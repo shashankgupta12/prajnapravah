@@ -4,23 +4,45 @@
 {% endblock %}
 
 {% block body %}
-
-	{% with messages = get_flashed_messages() %}
-		{% if messages %}
-			{% for message in messages %}
-				<p>{{ message }}</p>
-			{% endfor %}
-		{% else %}
-			<h3>List of Videos:</h3>
-			<ol>	
-				{% for link, videoTitle, _id in videos %}
-					<li><a href="{{ url_for('vids', id=_id, title=videoTitle) }}">{{ link }}</a></li>
-					<p>TITLE: {{ videoTitle }}</p>
-				{% endfor %}
-			</ol>
-		{% endif %}
-	{% endwith %}
-
+<section id="video-gallery">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="section-header">
+			        <h2 class="section-title text-center wow fadeInDown gallery-title">Videos</h2>
+			    </div>
+			</div>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{ message }}</p>
+					{% endfor %}
+				{% else %}
+					{% for link, videoTitle, _id in videos %}
+					<a href="{{ url_for('vids', id=_id, title=videoTitle) }}" title="IndianArmy">
+						<div class="col-lg-4">
+							<div class="list-group">
+								<div class="list-group-item videos-list">
+								    <div class="row-picture">							        
+							            <img class=" img-thumbnail img-box" src="{{ url_for('static', filename='images/portfolio/1.jpg') }}" alt="India" style="float: left;margin-right: 5px;">
+								        <p><a href="{{ url_for('vids', id=_id, title=videoTitle) }}">{{ videoTitle }}</a></p>
+								    </div>
+								    <div class="row-content">
+								        <small>
+								            <i class="glyphicon glyphicon-time"></i> 1 month ago 
+								            <br>
+								        </small>
+								    </div>
+								</div>
+							</div>          			
+						</div>
+					</a>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+</section>
 {% endblock %}
 
 {% block script %}

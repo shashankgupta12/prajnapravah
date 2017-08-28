@@ -104,7 +104,7 @@ hr {
 .column-title {
   margin-top: 0;
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  /*border-bottom: 1px solid #eee;*/
   margin-bottom: 15px;
   position: relative;
 }
@@ -1171,4 +1171,16 @@ li.dropdown:hover > .dropdown-menu {
 .form-control {
   box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+.videos-list:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-in-out; 
+  -moz-transition: all 0.4s ease-in-out; 
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#video-gallery {
+  padding: 50px 0;
 }
