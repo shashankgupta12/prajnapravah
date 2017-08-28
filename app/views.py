@@ -121,7 +121,7 @@ def ebooks():
 @app.errorhandler(404)
 @app.errorhandler(500)
 def page_not_found(e):
-	return render_template('404.html', title='Page Not Found'), 404cd
+	return render_template('404.html', title='Page Not Found'), 404
 
 if __name__ == '__main__':
 	app.run()
