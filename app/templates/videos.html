@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block body %}
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		{% else %}
+			<h3>List of Videos:</h3>
+			<ol>	
+				{% for link, videoTitle, _id in videos %}
+					<li><a href="{{ url_for('vids', id=_id, title=videoTitle) }}">{{ link }}</a></li>
+					<p>TITLE: {{ videoTitle }}</p>
+				{% endfor %}
+			</ol>
+		{% endif %}
+	{% endwith %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

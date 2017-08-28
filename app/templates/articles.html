@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block body %}
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		{% else %}
+
+			<h3>Click on an article to view it</h3>
+			<ol>
+				{% for article in articles %}
+					<li><a href="{{ url_for('article', title=article) }}">{{ article }}</a></li>
+				{% endfor %}
+			</ol>
+
+		{% endif %}
+	{% endwith %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

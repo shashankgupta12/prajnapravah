@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/photos.css') }}"/>
+{% endblock %}
+
+{% block body %}
+
+	{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% else %}        
+             <section id="portfolio">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title text-center wow fadeInDown gallery-title">{{ event }}</h2>
+                    </div>
+                    <div class="portfolio-items row">
+                        {% for image in images %}
+                        <div class="col-md-4 portfolio-item creative">
+                            <div class="portfolio-item-inner">
+                                <img class="img-responsive" src="{{ url_for('static', filename='images/gallery/{0}/{1}'.format(event, image)) }}" alt="images">
+                                <div class="portfolio-info">
+                                    <h3> {{ image }} </h3>
+                                    <a class="preview" href="{{ url_for('static', filename='images/gallery/{0}/{1}'.format(event, image)) }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div><!--/.portfolio-item-->
+                        {% endfor %}
+                    </div>
+                </div><!--/.container-->
+            </section><!--/#portfolio-->                
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

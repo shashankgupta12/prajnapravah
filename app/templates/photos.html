@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/photos.css') }}"/>
+{% endblock %}
+
+{% block body %}
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		{% else %}			
+			<section id="photos-gallery" class="home-section text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="section-header">
+		                        <h2 class="section-title text-center wow fadeInDown gallery-title">Click on an event to view its photos</h2>
+		                    </div>
+						</div>
+						{% for event in events %}
+						<a href="photos/{{ event }}" title="{{ event }}" >
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 event-list1">
+							<div class="offer offer-default">
+								<div class="shape">
+									<div class="shape-text">New</div>
+								</div>
+								<div class="offer-content">
+									<h3 class="lead">{{ event }}</h3>
+								</div>
+							</div>
+						</div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+		{% endif %}		
+	{% endwith %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

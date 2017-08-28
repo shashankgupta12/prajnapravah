@@ -1,0 +1,33 @@
+#ebooks-section {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+.student{
+    /*margin: 4% auto;*/
+    position: relative;
+}
+.srvc_icon{
+    width: 29px;
+    position: absolute;
+}
+.openBookIcon{
+    /*top: 20%;*/
+    right: 0;
+}
+.section-header {
+	margin-bottom: 0px !important;
+}
+.ebook-container a{
+	color: #222222;
+	word-wrap: break-word;
+}
+.ebook-container a:focus {
+	outline: none;
+}
+.ebook-container a:hover {
+	color: #45aed6;
+	-webkit-transition: all 0.2s ease-in-out; 
+    -moz-transition: all 0.2s ease-in-out; 
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}

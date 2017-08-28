@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+    <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}	
+    <section id="get-in-touch">
+            <div class="container">
+                <div class="row">
+					<div class="section-header">
+				        <h2 class="gallery-title section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Feel free to contact us</h2>				       
+				    </div>
+                    
+                    <div class="col-md-7 col-sm-7 wow fadeInLeft">
+                        <div class="contact-form clearfix">
+                            <form action="index.html" method="post">
+                                <div class="input-field">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" class="form-control" name="phone" placeholder="Your Phone no" required="">
+                                </div>
+                                <div class="input-field message">
+                                    <textarea name="message" class="form-control" placeholder="Your Message" required=""></textarea>
+                                </div>
+                                <input type="submit" class="btn btn-blue pull-right" value="SEND MESSAGE" id="msg-submit">
+                            </form>
+                        </div> <!-- end .contact-form -->
+                    </div> <!-- .col-md-8 -->
+
+                    <div class="col-md-5 col-sm-5 wow fadeInRight">
+                        <address>
+                        	<!-- <h3 class="coloum-title">Information</h3> -->
+                        	<p class="address-title">Jawaharlal Nehru University</p>
+                        	<p class="address-text">
+                        		<span class="address-icons"><i class="fa fa-map-marker" aria-hidden="true"></i></span>&nbsp <strong>Address: </strong> New Mehrauli Road, Munirka, New Delhi, Delhi 110067</br>
+                        		<span class="address-icons"><i class="fa fa-phone" aria-hidden="true"></i></span><strong>&nbspPhone: </strong>011 2674 2575
+                        	</p>
+                        	<p class="address-title">Timing</p>
+		                   	<p class="address-text">
+		                   		<span class="address-icons"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+		                   		<span class="address-text">&nbsp
+			                   		<strong> Monday-Friday:</strong> 9:00AM - 5:00PM </br>
+			                   		<strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Saturday - Sunday: </strong> <i>Closed</i>
+		                   		</span>
+		                   	</p>
+                        </address>
+                       	
+                    </div> <!-- .col-md-4 -->
+
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
