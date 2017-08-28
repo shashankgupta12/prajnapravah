@@ -1,9 +1,24 @@
+from flask import Flask
 from flask import render_template, request, flash
+from flaskext.mysql import MySQL
 from app import app, cur
 import requests
 import os
 
+
+app = Flask(__name__)
+mysql = MySQL()
+mysql.init_app(app)
+db = mysql.connect()
+cur = db.cursor()
+
 API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
+SECRET_KEY = 'YouKnowNothingJonSnow'
+
+MYSQL_DATABASE_HOST	= 'us-cdbr-iron-east-05.cleardb.net'
+MYSQL_DATABASE_USER	= 'b644ea1641c355'
+MYSQL_DATABASE_PASSWORD	= '6883ba6d'
+MYSQL_DATABASE_DB = 'heroku_ce775df7aab92ed'
 
 @app.route('/')
 # @app.route('/home')
@@ -103,3 +118,6 @@ def ebooks():
 		flash('No ebooks available yet')
 	ebooks = sorted(bookList, key=lambda x: x[1])
 	return render_template('ebooks.html', title='Ebooks', ebooks=ebooks)
+
+if __name__ == '__main__':
+	app.run()
