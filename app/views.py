@@ -215,11 +215,11 @@ def ebooks():
 
 @app.errorhandler(500)
 def internal_server_error(e):
-	return render_template('error.html', title='Internal Server Error | ', code=500, error_code=e), 500
+	return render_template('error.html', title='Internal Server Error | ', code=500, error_code='Internal Server Error'), 500
 
 @app.errorhandler(403)
 def forbidden_access(e):
-	return render_template('error.html', title='Access forbidden | ', code=403, error_code=e), 403
+	return render_template('error.html', title='Access forbidden | ', code=403, error_code="Forbidden: You don't have access to this resource"), 403
 
 @app.errorhandler(404)
 def page_not_found(e):
