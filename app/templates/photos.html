@@ -9,7 +9,7 @@
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			{% for message in messages %}
-				<p>{{ message }}</p>
+				<p class="flash_msg text-danger">{{ message }}</p>
 			{% endfor %}
 		{% else %}			
 			<section id="photos-gallery" class="home-section text-center">

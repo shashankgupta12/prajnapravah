@@ -1,0 +1,126 @@
+.audio-class {
+  padding-bottom: 100px;
+}
+.audioprogress {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin: 20px 0 30px 0;
+  transform: translate(-50%, -50%);
+}
+.progressCircle {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -32px;
+}
+@media only screen and (max-width: 768px) {
+  .audio-class {
+    text-align: center;
+  }
+}
+.progressCircle circle {
+  transition: stroke-dashoffset 1s linear;
+  backface-visibility: hidden;
+  stroke: #00282a;
+  stroke-width: 5px;
+  transform-origin: center center;
+}
+.progressCircle .progressbarLoading {
+  backface-visibility: hidden;
+  stroke: #3CE889;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+}
+.progressbarLoading {
+  transition: all 1s linear;
+}
+.ease-none .progressbarLoading {
+  transition: none;
+}
+.control {
+  background-color: rgba(51, 122, 183,0.9);
+  color: #fff;
+  margin: 10px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 145px;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.control > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 46px;
+  width: 24px;
+  margin-left: -12px;
+  margin-top: -23px;
+  line-height: 1;
+  transition: 0.5s ease;
+  transform: translateX(-8px);
+}
+.control > span span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  transition: 0.5s ease;
+  transform-style: preserve-3d;
+  transform-origin: left top;
+}
+.control > span span:first-child {
+  transform: translateX(8px) rotateY(90deg);
+}
+.control > span span:first-child em {
+  left: 0px;
+}
+.control > span span:first-child em:after {
+  content: '';
+  width: 10px;
+  height: 46px;
+  position: absolute;
+  left: -36px;
+  top: -22px;
+  box-shadow: inset 5px 0px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.control > span span:last-child {
+  transform: translateX(-8px) rotateY(90deg);
+  left: 16px;
+}
+.control > span span:last-child em {
+  left: 6px;
+}
+.control.active > span {
+  transform: translateX(0px);
+}
+.control.active > span span:first-child,
+.control.active > span span:last-child {
+  transform: translateX(0px) rotateY(0deg);
+}
+.control i {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.control em {
+  width: 0;
+  height: 0;
+  border-top: 23px solid transparent;
+  border-left: 36px solid #fff;
+  border-bottom: 23px solid transparent;
+  position: absolute;
+  top: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left top;
+}
+audio {
+  opacity: 0;
+}

@@ -2,9 +2,11 @@
 
 {% block stylesheet %}
     <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ebooks.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css"/>
 {% endblock %}
 
-{% block body %}	
+{% block body %}
     <section id="get-in-touch">
             <div class="container">
                 <div class="row">
@@ -12,27 +14,27 @@
 				        <h2 class="gallery-title section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Feel free to contact us</h2>				       
 				    </div>
                     
-                    <div class="col-md-7 col-sm-7 wow fadeInLeft">
+                    <div class="col-md-8 col-sm-8 wow fadeInLeft">
                         <div class="contact-form clearfix">
-                            <form action="index.html" method="post">
+                            <form action="{{ url_for('contactUs') }}" method="POST">
                                 <div class="input-field">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="input-field">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" class="form-control" name="phone" placeholder="Your Phone no" required="">
+                                    <input type="text" class="form-control" name="phone" placeholder="Your Phone no" required>
                                 </div>
                                 <div class="input-field message">
-                                    <textarea name="message" class="form-control" placeholder="Your Message" required=""></textarea>
+                                    <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
                                 </div>
                                 <input type="submit" class="btn btn-blue pull-right" value="SEND MESSAGE" id="msg-submit">
                             </form>
                         </div> <!-- end .contact-form -->
                     </div> <!-- .col-md-8 -->
 
-                    <div class="col-md-5 col-sm-5 wow fadeInRight">
+                    <div class="col-md-4 col-sm-4 wow fadeInRight">
                         <address>
                         	<!-- <h3 class="coloum-title">Information</h3> -->
                         	<p class="address-title">Jawaharlal Nehru University</p>
@@ -58,4 +60,16 @@
 {% endblock %}
 
 {% block script %}
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+            <script src="{{ url_for('static', filename='js/ebooks.js') }}"></script>
+            <script>                
+                sentMsg();
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 {% endblock %}

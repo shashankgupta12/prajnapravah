@@ -1,20 +1,19 @@
 {% extends "base.html" %}
 
 {% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css"/>
 {% endblock %}
 
 {% block body %}
     <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/3.jpg') }});">
+            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/1.jpg') }});">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2><span>Prajna </span>Pravah</h2>
-                                    <p>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</p>
-                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                                    <p class="pull-right">An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</p>
                                 </div>
                             </div>
                         </div>
@@ -27,24 +26,46 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2><span>Prajna </span>Pravah</h2>
                                     <p>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</p>
-                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--/.item-->
-            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/1.jpg') }});">
+            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/3.jpg') }});">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2><span>Prajna </span>Pravah</h2>
-                                    <p>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</p>
-                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                                    <p><span>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/7.jpg') }});">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <p><span>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url({{ url_for('static', filename='images/slider/4.jpg') }});">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <p><span>An Umbrella Organisation of several Nationalist Think Tanks of Bharat.</span></p>
                                 </div>
                             </div>
                         </div>
@@ -57,53 +78,39 @@
 	<section id="about">
 		<div class="container">
 		    <div class="section-header">
-		        <h2 class="section-title text-center wow fadeInDown">About Us</h2>
-                <p class="text-center wow fadeInDown">" Prajna Pravah is rational umbrella that stimulates, trains and organizes individuals to recognize the inherent strength of <br>
-                Bharath with academic vigor directed towards decolonizing Indian minds from Eurocentric impact. "
-                </p>
-		    </div>
-
-		    <div class="row">
-		        <div class="col-sm-7 wow fadeInLeft">
-		            <h3 class="column-title">Our Vision</h3>
-		            <p class="text-justify">
-                    Our organization functions with the sole vision of uplifting and reviving Hinduness in culture for emancipation of humanity. Hindutva being assimilative and self-sustaining has the potential to liberate the world from arrogance of power accumulated through dictatorship policies of the west. Prajna Pravah upholds the vision of incorporating the theme of nationalism in spiritual terms so that national intellect evolves with broadened dimension lifted above economic and political context.</p>
-
-		            <div class="row">
-		                <div class="col-sm-6">
-		                    <ul class="nostyle">
-                                <li><i class="fa fa-check-square"></i> Laying spiritual basis for sustainable development in thought process</li>
-                                <li><i class="fa fa-check-square"></i> Realization of objectives of nationalism and patriotism</li>
-                            </ul>
-		                </div>
-
-		                <div class="col-sm-6">
+		        <h2 class="section-title text-center wow fadeInDown gallery-title">Our Vision</h2>
+                 <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p class="text-justify text-center fadeInDown wow">
+                        Prajna Pravah is rational umbrella that stimulates, trains and synthesizes individuals to recognize the inherent strength of Bharath with academic vigor directed towards decolonizing Indian minds from Eurocentric impact. It functions with the sole vision of uplifting and reviving Hinduness in culture for emancipation of humanity. Hindutva being assimilative and self-sustaining has the potential to liberate world from arrogance of power accumulated through dictatorship policies of the west. Prajna Pravah upholds the vision of incorporating the theme of nationalism in spiritual terms so that national intellect evolves with broadened dimension lifted above economic and political context.</p>
+                        <div class="col-sm-6">
                             <ul class="nostyle">
-                                <li><i class="fa fa-check-square"></i> Arousal of spirit of true intellectualism and awareness among working-age population</li>
-                                <li><i class="fa fa-check-square"></i> Improvement in national building process with progressive youths</li>
+                                <li><i class="fa fa-check-square"></i> Realization of objectives of nationalism &amp patriotism</li>
+                                <li><i class="fa fa-check-square"></i> Arousal of spirit of true intellectualism & awareness among working-age population</li>
                             </ul>
                         </div>
-		            </div>
 
-		            <a class="btn btn-primary" href="#">Learn More</a>
-		        </div>
-
-		        <div class="col-sm-5 wow fadeInRight">
-		            <h3 class="column-title">Video Intro</h3>
-		            <!-- 16:9 aspect ratio -->
-		            <div class="embed-responsive embed-responsive-16by9">
-		                <iframe width="560" height="315" src="https://www.youtube.com/embed/rfyk5UXtp_Y" frameborder="0" allowfullscreen></iframe>
-		            </div>
-		        </div>
-
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Improvement in national building process with progressive youths</li>
+                                <li><i class="fa fa-check-square"></i> Laying spiritual basis for sustainable development in thought process</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Fostering sense of innovation & creativity towards benign outlook</li>
+                            </ul>
+                            <a class="btn btn-primary" href="{{ url_for('mission') }}">Learn More</a>   
+                        </div>
+                    </div>
+                </div>
 		    </div>
-		</div>
 	</section><!--/#about-->
 
 	<section id="animated-number">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Facts ABOUT US</h2>
+                <h2 class="section-title text-center wow fadeInDown gallery-title">Facts ABOUT US</h2>
                 <!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
 
@@ -139,85 +146,32 @@
     <section id="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Gallery</h2>
-                <!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                <h2 class="section-title text-center wow fadeInDown gallery-title">Gallery</h2>
             </div>
 
             <div class="text-center">
                 <ul class="portfolio-filter">
-                    <li><a class="active" href="#" data-filter="*">All Works</a></li>
-                    <li><a href="#" data-filter=".creative">Creative</a></li>
-                    <li><a href="#" data-filter=".corporate">Corporate</a></li>
-                    <li><a href="#" data-filter=".portfolio">Portfolio</a></li>
+                    <li><a class="active" href="#" data-filter="*">All</a></li>
+                    {% for images in imageList %}
+                        <li><a href="#" data-filter=".{{ images.folder }}">{{ images.folder }}</a></li>
+                    {% endfor %}
                 </ul><!--/#portfolio-filter-->
             </div>
 
             <div class="portfolio-items row">
-                <div class="col-md-4 portfolio-item creative">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/1.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 1</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/1.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+            {% for images in imageList %}
+                {% for img in images['images'] %}
+                    <div class="col-md-4 portfolio-item {{ images.folder }}">
+                        <div class="portfolio-item-inner">
+                            <img class="img-responsive" src="{{ url_for('static', filename='images/360x240/home/{0}/{1}'.format(images['folder'], img)) }}" alt="{{ images.folder}} {{ img }}">
+                            <div class="portfolio-info">
+                                <h3>{{ img }}</h3>
+                                <a class="preview" href="{{ url_for('static', filename='images/home/{0}/{1}'.format(images['folder'], img)) }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="col-md-4 portfolio-item corporate portfolio">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/2.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 2</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/2.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="col-md-4 portfolio-item creative">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/3.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 3</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/3.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="col-md-4 portfolio-item corporate">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/4.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 4</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/4.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="col-md-4 portfolio-item creative portfolio">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/5.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 5</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/5.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="col-md-4 portfolio-item corporate">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ url_for('static', filename='images/portfolio/6.jpg') }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 5</h3>
-                            Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{ url_for('static', filename='images/portfolio/6.jpg') }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
+                    </div><!--/.portfolio-item-->
+                {% endfor %}
+            {% endfor %}        
             </div>
         </div><!--/.container-->
     </section><!--/#portfolio-->
@@ -225,17 +179,16 @@
     <section id="subscribe" class="wow fadeIn">
         <div class="container">
              <div class="section-header">
-                <h2 class="section-title sub-title text-center wow fadeInUp animated" style="visibility: visible; animation-name: fadeInDown;">Subscribe Now</h2>
+                <h2 class="section-title sub-title text-center wow fadeInUp animated gallery-title" style="visibility: visible; animation-name: fadeInDown;">Subscribe Now</h2>
                 <p class="text-center wow fadeInDown">Subscribe to our Monthly Newsletter & Stay tuned.</p>
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 wow fadeInLeft">
-                    <form action="#" method="post" class="subscription-form">
+                    <form action="{{ url_for('index') }}" method="POST" class="subscription-form">
                         <div class="input-field">
                             <i class="fa fa-envelope-o fa-lg"></i>
-                            <input type="email" name="subscribe" class="subscribe" id="subscribe-input" placeholder="Enter your email address..." required="">
+                            <input type="email" name="email" class="subscribe" id="subscribe-input" placeholder="Enter your email address..." required="">
                             <input type="submit" value="SUBSCRIBE" id="mail-submit">
-
                         </div>                       
                     </form>
                 </div>
@@ -244,99 +197,18 @@
         </div>
     </section>
 
-    <section id="blog">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Latest Articles</h2>
-                <p class="text-center wow fadeInDown">"We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts live; they travel far." - <strong>Swami Vivekananda</strong></p>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive" src="{{ url_for('static', filename='images/blog/01.jpg') }}" alt="">
-                                    <span class="post-format post-format-video"><i class="fa fa-film"></i></span>
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-primary" href="#">Read More</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                </div><!--/.col-sm-6-->
-                <div class="col-sm-6">
-                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="100ms">
-                        <article class="media clearfix">
-                            <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="images/blog/02.jpg" alt="">
-                                <span class="post-format post-format-gallery"><i class="fa fa-image"></i></span>
-                            </div>
-                            <div class="media-body">
-                                <header class="entry-header">
-                                    <div class="entry-date">01 December 2014</div>
-                                    <h2 class="entry-title"><a href="#">BeReviews was a awesome envent in dhaka</a></h2>
-                                </header>
-
-                                <div class="entry-content">
-                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
-                                    <a class="btn btn-primary" href="#">Read More</a>
-                                </div>
-
-                                <footer class="entry-meta">
-                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Campbell</a></span>
-                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                                </footer>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="200ms">
-                        <article class="media clearfix">
-                            <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="images/blog/03.jpg" alt="">
-                                <span class="post-format post-format-audio"><i class="fa fa-music"></i></span>
-                            </div>
-                            <div class="media-body">
-                                <header class="entry-header">
-                                    <div class="entry-date">03 November 2014</div>
-                                    <h2 class="entry-title"><a href="#">Play list of old bangle  music and gajal</a></h2>
-                                </header>
-
-                                <div class="entry-content">
-                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
-                                    <a class="btn btn-primary" href="#">Read More</a>
-                                </div>
-
-                                <footer class="entry-meta">
-                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Ruth</a></span>
-                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                                </footer>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    
-    
 {% endblock %}
 
 {% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/ebooks.js') }}"></script>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <script>                
+                    subscribed("{{ message }}");
+                </script>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 {% endblock %}

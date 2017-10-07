@@ -1,5 +1,9 @@
+**/.*
 virtual/
 __pycache__/
+py3env/
+.DS_Store
 *.pyc
 app/__pycache__/
 app/*.pyc
+app/**/.*

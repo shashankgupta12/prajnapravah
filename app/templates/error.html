@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/404.css') }}"/>
+{% endblock %}
+  {% block body %}
+  <section id="error-section">
+    <div class="container">
+      <div class="row">
+        <div class="boo-wrapper">
+          <div class="boo">
+            <div class="face"></div>
+          </div>
+          <div class="shadow"></div>
+            <div class="section-header">
+              <h2 class="section-title text-center gallery-title">ERROR {{ code }}</h2>
+            </div>
+            <p>{{ error_code }}</p>
+            
+        <a class="btn btn-primary btn-lg back-button">Back</a>
+        <a class="btn btn-primary btn-lg" href="{{url_for('index')}}">Home Page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+
+{% block script %}
+{% endblock %}

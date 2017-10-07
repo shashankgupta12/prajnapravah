@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block stylesheet %}
+    <link href="{{ url_for('static', filename='css/audio.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -9,7 +10,7 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Our Mission</h2>
+                <h2 class="section-title text-center wow fadeInDown gallery-title">Our Mission</h2>
             </div>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -20,25 +21,54 @@
                     <br><br>
                 </div>
             </div>
-            <div class="row">
-            	<div class="col-lg-10 col-lg-offset-1">
-            		<p class="text-justify wow fadeInUp ourVisionText">
+            <div class="row wow fadeInUp animated animated">
+            	<div class="col-lg-10 col-lg-offset-1 ">
+                    <blockquote class="wow fadeInUp">
+                        <div class="quote">
+                             <span class="text-danger ourVisionText">"Prajna Pravah is a nationwide intellectual movement rooted in Bharatiya ethos and traditions"</span>
+                        </div>
+                    </blockquote>
+                        <h3 class="gallery-title">Mission</h3>
+                		<p class="text-justify wow fadeInUp ourVisionText">
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        The oceanic congregation of intellectuals in India emanate from individual channels of knowledge, which eventually imbibe greatness as they meet and merge with the cause of humanity and nationalism. From the very ancient times, Bharath had been the <span class="text-danger"><i><strong>gravitational center of intellectualism</i></strong></span>. However, repeated territorial conquests in different forms injected venom in the nation’s backbone, thereby rigidly distorting physicality, mentality and morality of an individual and therefore, the country as a whole. Though, with our united resistance through physical efforts, we have been able to combat the conquerors on armory ground; but failed to completely wipe off their deep rooted impact from the social arena. This not only has contaminated the cultural discourse but also infested our intellectual stream. The right way to defeat such elements is definitely not with ammunition, as they continuously tend to change their appearance, making it difficult to track them down. The solution to get through such challenge is self- realization. It is this realization that would make our brain churn to understand the underlying organization of the invaders and their belief system. In general, whenever a change is expected, it is the sequence of events in a system that needs to be transformed or amended. For bringing out a revolutionary change in the system, requires trust, respect and support from peers.
+                        We are living in a fast-changing world. The tide of globalization is sweeping across the continents, upsetting and uprooting longstanding cultures and traditions, values and attitudes and forcing radical changes whose consequences are unpredictable. Countries like India whose cultural vitality has withstood the shocks of untold foreign invasions and alien cultural onslaughts are now facing serious problems of survival. Cultural diversity, varied lifestyles, Bio-diversity and dignity of individuals and groups are under threat by the onrush of a consumeristic and materialistic civilization, which has no foundation of a wholesome philosophy, or integral vision of life. For the sake of humanity’s future wellbeing, this threat has to be squarely faced at all levels. Prajna Pravah has been visualized as an intellectual forum which can take up such challenges effectively, through in-depth studies, research and propagation of ideas among the elite and the common masses.
                     </p>
+                    <p class="text-justify wow fadeInUp ourVisionText">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp It is not an organization per se. It has been envisaged as a forum of Nationalist thinkers to felicitate creative thinking, developing positive content, giving proper direction to the discourses and also building up a healthy network among Bharat centric Intellectuals, Intellectual movements and think tanks all-round the globe.                        
 
-					<p class="text-justify wow fadeInUp ourVisionText">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        In Bharath, there is a very popular saying that we enjoy unity in diversity. However, this is wrongly quoted as there is one almighty and the nature is a reflection of that supreme power into many forms, i.e. diverse <span class="text-danger"><i><strong>forms of one-ness</i></strong></span>. Similarly, there has been an upcoming trend of fouling the basic usage of words. For instance, whatever regarded as tradition is outdated and is opposed to modernity. Some British officials nomenclatured our historical journey into three phases: Hindu, Muslim and British-powered reigns. After independence, the period marked by Hindu-rich cultures and traditions was regarded as ‘Ancient’, Muslim-reign became ‘Medieval’ and British-rule was proudly manifested as ‘Modern’.
+                    </p><br>
+                    <h3 class="gallery-title">Objective</h3>
+					<p class="text-justify wow fadeInUp ourVisionText">
+                        Our country possesses a hoary and continuous civilization with its abundant material and mental resources. It has its own philosophy of life which enables us to form a concrete opinion and judgement of every aspect of life. That philosophy of life is an organic, holistic or integrated philosophy. To see life, truth and nature as a continuum is the hall mark of our outlook. In contrast, western view of life sees separateness of mind-matter, faith-reform, man-nature, religion-science, etc. </br>Indiscriminate and rapid spread of the westernized mechanistic civilization with its cartesian categories, has not only resulted in a crisis of human values in our society, but also endangered the very existence of the human race at large. It is an irony that independent Bharat, instead of learning any lesson from the western experience and following the basic inspiration of her own freedom struggle, has been blindly following the western model. </p>
+
+                    <p class="text-justify wow fadeInUp ourVisionText">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp There is an urgent need to reverse this trend, to take stock of our own moral intellectual resources and use them in a concerted manner to formulate a plan of our own for national regeneration. Thus, it is high time the country needs a powerful moral intellectual movement to:
+                        <ul>
+                            <li class="ourVisionText">Present, in modern idiom, the sublime philosophy evolved by the ancient Bharatiya genius and the social system aiming at the evolution of man into a higher being, by pursuing the Indian holistic approach which was based on the concept of a fundamental organic relationship between man, his environment and the cosmic process.</li>
+                            <li class="ourVisionText">Analyze, assess and suitably re-orient the existing social structure which became badly distorted and disoriented during the prolonged of foreign rule, and promote a dynamic, forward-looking social setup rooted in our universal Sanatan life-values.</li>
+                            <li class="ourVisionText">Strive to bring modern science and technology in harmony with Mother Nature and higher human values, by encouraging a comparative study of the scientific and technological knowledge, acquired by mankind during the last few centuries and the Bharatiya perception of nature, science and technology.</li>
+                            <li class="ourVisionText">Raise the people's thinking from narrow loyalties to the higher loyalty to our country, our people, our culture and, indeed, to all mankind.</li>
+                            <li class="ourVisionText">Strengthen the resolve of nation to fight against tendencies detrimental to the unity and integrity of country.</li>
+                        </ul>
                     </p>
-                    
-                    <p class="text-justify wow fadeInUp ourVisionText">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        In our country, the sense of devotion and sacrifice has always been framed in a sequence of higher vision that emanates from individual, family and ancestral-institutions to nation, humanity and God. According to our tradition, acquisition of wealth and desire has always been strictly bounded by Dharma, beyond which aspiration of any form or intensity is Adharma and hence, injustice to mankind and self. Bharath is not just a territory but ‘bearer of knowledge’ that stands firmly on a foundation enriched with cultural one-ness. We have a rich culture of words, tunes, colors and expressions. A culture of words gives birth to wonderful scriptures and literature, culture of tunes springs out into soul refreshing ragas, culture of colors radiates most vivid form of imaginations as paintings; and culture of expression is molded as fantastic forms of dancing moves. Our <span class="text-danger"><i><strong>cultural cosmos</i></strong></span> inherently drives us from Nar to Narayana.    
-                    </p>
-                    
-                    <p class="text-justify wow fadeInUp ourVisionText">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        The present day challenge is to affirm intellectualism in Bharath so as to uproot violence of all forms. Every nation has a core culture that strengthens the bond of nationalism and humanism. This culture is gradually getting wiped off owing to religion-conversions. Such activity not only invades our spiritual tradition but also blocks our awareness and knowledge of our own being. This ultimately calls for <span class="text-danger"><i><strong>decolonizing the mind of our country men</i></strong></span> so that nationalism could resurge with even deeper projection of cultural narratives into our veins. Time has come when western academics needs to get challenged and media monoliths to act in a manner that breeds lesser conflicts on indigenous matters and more on alienated polity of the west.
-                    </p>                        
             	</div>
+                <div class="col-lg-10 col-lg-offset-1 audio-class">
+                    <h3 class="gallery-title">Play Our Anthem</h3>
+                    <audio id="audio_player" ontimeupdate="audioProgressBar()" preload="auto" controls>
+                      <!-- <source src={{ url_for('static', filename='audios/Anthem.mp3') }}" type="audio/mp3"> -->
+                      <source src="{{ url_for('static', filename='audios/Anthem.mp3') }}" type="audio/mp3">
+                      Your browser does not support the audio tag.
+                    </audio>
+
+                    <div class="audioprogress">
+                      <svg class="progressCircle" x="0px" y="0px" width="166px" height="166px" viewBox="0 0 166 166" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="progressbarTrack" stroke-miterlimit="10" cx="83" cy="83" r="80" fill="transparent"></circle>
+                        <circle id="bar" class="progressbarLoading" stroke-miterlimit="10" cx="83" cy="83" r="80" stroke-dasharray="502" stroke-dashoffset="-502" fill="transparent"></circle>
+                      </svg>
+                      <a href="" id="audio_control" class="control">Play/Pause<span>
+                        <span class="one"><i></i><em></em></span>
+                        <span class="two"><i></i><em></em></span>
+                      </span></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -46,4 +76,5 @@
 {% endblock %}
 
 {% block script %}
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
 {% endblock %}

@@ -15,21 +15,21 @@
 			{% with messages = get_flashed_messages() %}
 				{% if messages %}
 					{% for message in messages %}
-						<p>{{ message }}</p>
+						<p class="flash_msg text-danger">{{ message }}</p>
 					{% endfor %}
 				{% else %}
-					{% for link, videoTitle, _id in videos %}
-					<a href="{{ url_for('vids', id=_id, title=videoTitle) }}" title="IndianArmy">
-						<div class="col-lg-4">
+					{% for videoTitle, _id, thumbnail, dt in videos %}
+					<a href="{{ url_for('vids', id=_id, title=videoTitle) }}" title="{{ videoTitle }}">
+						<div class="col-md-4">
 							<div class="list-group">
 								<div class="list-group-item videos-list">
 								    <div class="row-picture">							        
-							            <img class=" img-thumbnail img-box" src="{{ url_for('static', filename='images/portfolio/1.jpg') }}" alt="India" style="float: left;margin-right: 5px;">
+							            <img class=" img-thumbnail img-box" src="{{ thumbnail }}" alt="India" style="float: left;margin-right: 5px;">
 								        <p><a href="{{ url_for('vids', id=_id, title=videoTitle) }}">{{ videoTitle }}</a></p>
 								    </div>
 								    <div class="row-content">
 								        <small>
-								            <i class="glyphicon glyphicon-time"></i> 1 month ago 
+								            <i class="glyphicon glyphicon-calendar"></i>&nbsp&nbsp  {{ dt }} 
 								            <br>
 								        </small>
 								    </div>
@@ -42,6 +42,14 @@
 			{% endwith %}
 		</div>
 	</div>
+	<ul class="pager">
+		{% if not prev|int == -1 %}
+			<li><a href="{{ url_for('videos', page=prev) }}">&larr; Previous</a></li>
+		{% endif %}
+		{% if not nxt|int == -1 %}
+			<li><a href="{{ url_for('videos', page=nxt) }}">Next &rarr;</a></li>	
+		{% endif %}	    
+	</ul>
 </section>
 {% endblock %}
 

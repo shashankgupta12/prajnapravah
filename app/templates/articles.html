@@ -1,26 +1,46 @@
 {% extends "base.html" %}
 
 {% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/articles.css') }}"/>
 {% endblock %}
 
 {% block body %}
-
+<section id="services" >
+    <div class="container">
+		 <div class="section-header">
+	        <h2 class="section-title gallery-title text-center wow fadeInDown">Articles</h2>
+	    </div>
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			{% for message in messages %}
-				<p>{{ message }}</p>
+				<p class="flash_msg text-danger">{{ message }}</p>
 			{% endfor %}
 		{% else %}
-
-			<h3>Click on an article to view it</h3>
-			<ol>
-				{% for article in articles %}
-					<li><a href="{{ url_for('article', title=article) }}">{{ article }}</a></li>
+			<div class="site__wrapper">
+				{% for articleTitle, author, date, publishedAt, imagefile in articles %}
+					<div class="grid">
+					      <div class="card">
+					         <div class="card__image">
+					            <img src="{{ url_for('static', filename='images/articles/thumbnails/{0}'.format(imagefile)) }}" alt="">
+					            <div class="card__overlay card__overlay--blue"> <!-- card__overlay--indigo card__overlay--blue -->
+					               <div class="card__overlay-content">
+					                  <a href="{{ url_for('article', title=articleTitle) }}" class="card__title">{{ articleTitle }}</a>
+					                  <ul class="card__meta card__meta--last">
+					                     <li><i class="fa fa-clock-o"></i> {{ date }}</li>
+					                     <li><a href="#"><i class="fa fa-user"></i> {{ author }}</a></li>
+					                     <li><a href="#"><i class="fa fa-facebook-square"></i> Share</a></li>
+					                  </ul>
+					               </div>
+					            </div>
+					         </div>
+					      </div>
+					</div>
 				{% endfor %}
-			</ol>
-
+			</div>
 		{% endif %}
 	{% endwith %}
+</div>
+</section>
 
 {% endblock %}
 

@@ -1,127 +1,229 @@
-from flask import Flask
-from flask import render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flaskext.mysql import MySQL
-import requests
+from flask_mail import Mail, Message
+import pymysql
 import os
+import requests
 
-mysql = MySQL()
 app = Flask(__name__)
-app.config['MYSQL_DATABASE_HOST']	= 'us-cdbr-iron-east-05.cleardb.net'
-app.config['MYSQL_DATABASE_USER']	= 'b644ea1641c355'
-app.config['MYSQL_DATABASE_PASSWORD']	= '6883ba6d'
-app.config['MYSQL_DATABASE_DB'] = 'heroku_ce775df7aab92ed'
-mysql.init_app(app)
 
-db = mysql.connect()
-cur = db.cursor()
+# app.config['MYSQL_DATABASE_HOST']	= 'us-cdbr-iron-east-05.cleardb.net'
+# app.config['MYSQL_DATABASE_USER']	= 'b644ea1641c355'
+# app.config['MYSQL_DATABASE_PASSWORD']	= '6883ba6d'
+# app.config['MYSQL_DATABASE_DB'] = 'heroku_ce775df7aab92ed'
+
+# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+# app.config['MYSQL_DATABASE_USER'] = 'root'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+# app.config['MYSQL_DATABASE_DB'] = 'prajnapravah'
+
+app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
+app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
+app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
+
+mysql = MySQL(app)
+
+app.config['SECRET_KEY'] = 'YouKnowNothingJonSnow'
+app.config['MAIL_SERVER']= 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'jnudurgapuja@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Antara@1991'
+
+mail = Mail(app)
 
 API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
-SECRET_KEY = 'YouKnowNothingJonSnow'
 
-@app.route('/')
-# @app.route('/home')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html', title='Home')
+	if request.method == 'POST':
+		email = request.form['email']
+		try:
+			db = mysql.connect()
+			cur = db.cursor()
+			cur.execute("insert into subscribers (email) values ('{0}')".format(email))
+			db.commit()
+			db.close()
+			flash('subscribed')
+			msg = Message('Subscription successful', sender="jnudurgapuja@gmail.com", recipients=email)
+			msg.body = "You have successfully subscribed to www.prajnapravah.com"
+			mail.send(msg)
+		
+		except pymysql.err.IntegrityError:
+			flash('already-subscriber')
+
+		return redirect(url_for('index'))
+
+	if request.method == 'GET':
+		imageList = []
+		imageFolders = os.listdir(os.path.join(app.static_folder, 'images/home'))
+		for folder in sorted(imageFolders):
+			dic = dict()
+			dic['folder'] = folder
+			dic['images'] = sorted(os.listdir(os.path.join(app.static_folder, 'images/home/{0}'.format(folder))))
+			imageList.append(dic)
+
+		return render_template('index.html', imageList=imageList)
 
 @app.route('/our-mission')
 def mission():
-	return render_template('mission.html', title='Our Mission')
+	return render_template('mission.html', title='Our Mission | ')
 
 @app.route('/events')
 def events():
-	return render_template('events.html', title='Events')
+	return render_template('events.html', title='Events | ')
 
 @app.route('/photos/<event>')
 def imgs(event):
 	imageList = os.listdir(os.path.join(app.static_folder, 'images/gallery/{0}'.format(event)))
 	if not imageList:
 		flash('No images for this event yet')
-	return render_template('eventImages.html', title='{0} images'.format(event), images=imageList, event=event)
+
+	return render_template('eventImages.html', title='{0} images | '.format(event), images=sorted(imageList), event=event)
 
 @app.route('/photos')
 def photos():
 	eventList = next(os.walk(os.path.join(app.static_folder, 'images/gallery')))[1]
 	if not eventList:
 		flash('No events yet')
+
 	eventList.sort()
-	return render_template('photos.html', events=eventList, title='Photos')
+	return render_template('photos.html', title='Photos | ', events=eventList)
 
 @app.route('/video')
 def vids():
 	videoId = request.args.get('id', None)
 	videoTitle = request.args.get('title', None)
+
 	url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={0}&key={1}'.format(videoId, API_KEY)
-	response = requests.get(url)
-	res = response.json()
-	description = res['items'][0]['snippet']['description']
-	link = '{0}'.format(videoId)
-	return render_template('vid.html', title='Play Video', videoTitle=videoTitle, description=description, link=link)
+	response = requests.get(url).json()
+	description = response['items'][0]['snippet']['description']
+	
+	pageTitle = '{0} | '.format(videoTitle)
+	return render_template('vid.html', title=pageTitle, videoTitle=videoTitle, description=description, videoId=videoId)
 
 @app.route('/videos')
-def videos():
+@app.route('/videos/<page>')
+def videos(page=0):
 	videos = []
+	db = mysql.connect()
+	cur = db.cursor()
 	cur.execute('select * from videos')
 	vidList = cur.fetchall()
+	db.close()
+	
 	if not vidList:
 		flash('No videos available yet')
-	for video in vidList:	
-		link = 'https://www.youtube.com/watch?v={0}'.format(video[0])
-		url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={0}&key={1}'.format(video[0], API_KEY)
-		response = requests.get(url)
-		res = response.json()
-		videoTitle = res['items'][0]['snippet']['localized']['title']
-		_id = video[0]
-		videos.append((link, videoTitle, _id))
 
-	return render_template('videos.html', title='Videos', videos=videos)
+	vidList = sorted(vidList, key=lambda x: x[2], reverse=True) if vidList else []
+	page = int(page)
+	count = page * 12
 
-@app.route('/contact-us')
+	# page numbering starts from 0 and not 1; page 2 is numbered 1 and so on
+	if count >= len(vidList) and not count == 0:
+		abort(404)
+
+	if count == 0:
+		nxt = -1 if (count + 12) >= len(vidList) else page + 1
+		prev = -1
+
+	elif not count == 0:
+		nxt = -1 if (count + 12) >= len(vidList) else page + 1
+		prev = page - 1
+
+	vidList = vidList[count:] if (count + 12) > len(vidList) else vidList[count:(count + 12)]
+	for _id, videoTitle, dt in vidList:	
+		thumbnail = 'http://img.youtube.com/vi/{0}/mqdefault.jpg'.format(_id)
+		videos.append((videoTitle, _id, thumbnail, dt))
+
+	return render_template('videos.html', title='Videos | ', videos=videos, nxt=nxt, prev=prev)
+
+@app.route('/contact-us', methods=['GET', 'POST'])
 def contactUs():
-	return render_template('contactUs.html', title='Contact Us')
+	if request.method == 'POST':
+		name = request.form['name']
+		email = request.form['email']
+		phone = request.form['phone']
+		message = request.form['message']
+
+		msg = Message('{0} | {1}'.format(name, phone), sender="jnudurgapuja@gmail.com", recipients=["meetthedevelopers@gmail.com"])
+		msg.body = "Name: {0}\nEmail: {1}\nPhone No.: {2}\nMessage: {3}".format(name, email, phone, message)
+		mail.send(msg)
+
+		flash('Details submitted successfully')
+		return redirect(url_for('contactUs'))
+
+	if request.method == 'GET':
+		return render_template('contactUs.html', title='Contact Us | ')
 
 @app.route('/developers')
 def developers():
-	return render_template('developers.html', title='Meet our Developers')
+	return render_template('developers.html', title='Meet the Developers | ')
 
 @app.route('/article')
 def article():
 	title = request.args.get('title', None)
-	cur.execute("select filename from articles where title = '{title}'".format(title=title))
-	filename = cur.fetchall()
-	if not filename:
-		flash('This article does not exist')
-	file = os.path.join(app.static_folder, 'archive/articles/{0}'.format(filename[0][0]))
-	with open(file, 'r') as f:
-		data = f.read()
+	db = mysql.connect()
+	cur = db.cursor()
+	cur.execute("select filename, author, date, publishedAt from articles where title = '{title}'".format(title=title))
+	data = cur.fetchall()
+	
+	if not data:
+		abort(404)
 
-	return render_template('article.html', title=title, article=data)
+	for f, a, d, p in data:
+		filename = 'articles/{0}'.format(f)
+		author = a
+		date = d
+		publishedAt = p
+
+	if not os.path.isfile('{0}/../templates/{1}'.format(app.static_folder, filename)):
+		abort(404)
+
+	pageTitle = '{0} | '.format(title)
+	return render_template('article.html', title=pageTitle, articleTitle=title, date=date, author=author, publishedAt=publishedAt, filename=filename)
 
 @app.route('/articles')
 def articles():
-	articles = []
-	cur.execute('select title from articles')
+	db = mysql.connect()
+	cur = db.cursor()
+	cur.execute('select title, author, date, publishedAt, imagefile from articles')
 	articleList = cur.fetchall()
+	db.close()
+
 	if not articleList:
 		flash('No articles available yet')
 
-	articles = sorted([each_article[0] for each_article in articleList])
-
-	return render_template('articles.html', title='Articles', articles=articles)
+	articles = sorted(articleList, key=lambda x: x[2], reverse=True) if articleList else []
+	return render_template('articles.html', title='Articles | ', articles=articles)
 
 @app.route('/ebooks')
 def ebooks():
+	db = mysql.connect()
+	cur = db.cursor()
 	cur.execute('select * from ebooks')
 	bookList = cur.fetchall()
+	db.close()
+
 	if not bookList:
 		flash('No ebooks available yet')
-	ebooks = sorted(bookList, key=lambda x: x[1])
-	return render_template('ebooks.html', title='Ebooks', ebooks=ebooks)
+	
+	ebooks = sorted(bookList, key=lambda x: x[1]) if bookList else []
+	return render_template('ebooks.html', title='Ebooks | ', ebooks=ebooks)
+
+@app.errorhandler(500)
+def internal_server_error(e):
+	return render_template('error.html', title='Internal Server Error | ', code=500, error_code=e), 500
 
 @app.errorhandler(403)
+def forbidden_access(e):
+	return render_template('error.html', title='Access forbidden | ', code=403, error_code=e), 403
+
 @app.errorhandler(404)
-@app.errorhandler(500)
 def page_not_found(e):
-	return render_template('404.html', title='Page Not Found'), 404
+	return render_template('error.html', title='Page Not Found | ', code=404, error_code=e), 404
 
 if __name__ == '__main__':
 	app.run()

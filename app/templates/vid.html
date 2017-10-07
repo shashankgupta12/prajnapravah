@@ -15,11 +15,11 @@
 				{% with messages = get_flashed_messages() %}
 					{% if messages %}
 						{% for message in messages %}
-							<p>{{ message }}</p>
+							<p class="flash_msg text-danger">{{ message }}</p>
 						{% endfor %}
 					{% else %}
 						<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-				          <iframe src="https://www.youtube.com/embed/{{link}}" width="95%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				          <iframe src="https://www.youtube.com/embed/{{ videoId }}" width="95%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				          <p> {{ description }}</p>
 			          </div>
 					{% endif %}

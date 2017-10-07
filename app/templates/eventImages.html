@@ -9,7 +9,7 @@
 	{% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <p>{{ message }}</p>
+                <p class="flash_msg text-danger">{{ message }}</p>
             {% endfor %}
         {% else %}        
              <section id="portfolio">
@@ -21,7 +21,7 @@
                         {% for image in images %}
                         <div class="col-md-4 portfolio-item creative">
                             <div class="portfolio-item-inner">
-                                <img class="img-responsive" src="{{ url_for('static', filename='images/gallery/{0}/{1}'.format(event, image)) }}" alt="images">
+                                <img class="img-responsive" src="{{ url_for('static', filename='images/360x240/gallery/{0}/{1}'.format(event, image)) }}" alt="images">
                                 <div class="portfolio-info">
                                     <h3> {{ image }} </h3>
                                     <a class="preview" href="{{ url_for('static', filename='images/gallery/{0}/{1}'.format(event, image)) }}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
