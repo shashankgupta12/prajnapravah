@@ -40,6 +40,8 @@ API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
 def index():
 	if request.method == 'POST':
 		email = request.form['email']
+		recipients = []
+		recipients.append(email)
 		try:
 			db = mysql.connect()
 			cur = db.cursor()
@@ -47,7 +49,7 @@ def index():
 			db.commit()
 			db.close()
 			flash('subscribed')
-			msg = Message('Subscription successful', sender="jnudurgapuja@gmail.com", recipients=email)
+			msg = Message('Subscription successful', sender="jnudurgapuja@gmail.com", recipients=recipients)
 			msg.body = "You have successfully subscribed to www.prajnapravah.com"
 			mail.send(msg)
 		
