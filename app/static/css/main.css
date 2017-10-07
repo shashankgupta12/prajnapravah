@@ -1140,77 +1140,32 @@ li.dropdown:hover > .dropdown-menu {
 /***********************
 ********* Footer ******
 **********************/
-
 #footer {
-    background-color: #121116;
-    padding: 25px 0 25px;
-}
-
-.footer-logo {
-    margin-bottom: 25px;
-}
-
-.footer-social {
-    margin-bottom: 15px;
-}
-
-.footer-social h3 {
-    font-size: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.footer-social h3:after {
-  border-bottom: 1px solid #fff;
-  bottom: 0;
-  content: "";
-  display: block;
-  left: 50%;
-  margin-left: -115px;
-  position: absolute;
-  width: 230px;
-}
-
-.footer-social ul li a {
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: #fff;
-  display: block;
-  margin: 0 8px;
+  background: #121116;
 }
-
-.footer-social ul li a:hover {
+#footer a {
   color: #00C7FC;
 }
-
-.copyright {
-    font-size: 15px;
-    font-weight: 300;
-    color: #fff;
+#footer a:hover {
+  color:  #fafafa;
 }
-
-.copyright a {
-    color: #00C7FC;
+#footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 -7.5px;
 }
-
-.copyright a:hover {
-    color: #fff;
+#footer ul > li {
+  display: inline-block;
+  margin: 0 7.5px;
 }
-
-.copyright p {
-
+@media only screen and (min-width: 768px) {
+  #footer .social-icons {
+    float: right;
+  }
 }
-
-.copyright p:first-child {
-    margin-bottom: 15px;
-}
-
-.form-control {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
 .videos-list:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.4s ease-in-out; 

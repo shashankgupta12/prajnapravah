@@ -19,11 +19,11 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.jpg') }}"">
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='css/') }}" href="images/ico/apple-touch-icon-57-precomposed.png"> -->
 
 	{% block stylesheet %}{% endblock %}
 
@@ -90,14 +90,19 @@
 
 	{% block body %}{% endblock %}
 
-	<footer id="footer" class="text-center">
+    <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright">
-                        <p>&copy Copyright all rights reserved | Meet the <a href="{{ url_for('developers') }}">Developers</a></p>
-                    </div>
-
+                <div class="col-sm-6 text-center">
+                   &copy Copyright all rights reserved | Meet the <a href="{{ url_for('developers') }}" title="prajna pravah developers">Developers</a>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>

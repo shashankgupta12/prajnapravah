@@ -42,13 +42,16 @@ def index():
 		email = request.form['email']
 		recipients = []
 		recipients.append(email)
+
 		try:
 			db = mysql.connect()
 			cur = db.cursor()
 			cur.execute("insert into subscribers (email) values ('{0}')".format(email))
 			db.commit()
 			db.close()
+			
 			flash('subscribed')
+
 			msg = Message('Subscription successful', sender="jnudurgapuja@gmail.com", recipients=recipients)
 			msg.body = "You have successfully subscribed to www.prajnapravah.com"
 			mail.send(msg)

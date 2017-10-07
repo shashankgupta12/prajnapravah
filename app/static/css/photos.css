@@ -76,11 +76,8 @@
 
 #photos-gallery {
   background: #ffffff;
-  min-height: 80vh;
-  display: inline;
-  float: left;
   padding: 85px 0 85px 0;
-  width: 100%;
+  min-width: 80vh;
 }
 #event-list {
   background-color: #ffffff;
