@@ -21,8 +21,8 @@
 		                    </div>
 						</div>
 						{% for event in events %}
-						<a href="photos/{{ event }}" title="{{ event }}" >
-							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 event-list1">
+						<div class="col-sm-6 col-md-4 col-lg-4 event-list1">
+							<a href="photos/{{ event }}" title="{{ event }}" >
 								<div class="offer offer-default">
 									<div class="shape">
 										<div class="shape-text">New</div>
@@ -31,8 +31,8 @@
 										<h3 class="lead">{{ event }}</h3>
 									</div>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 						{% endfor %}
 					</div>
 				</div>

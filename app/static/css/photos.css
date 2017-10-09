@@ -77,7 +77,7 @@
 #photos-gallery {
   background: #ffffff;
   padding: 85px 0 85px 0;
-  min-width: 80vh;
+  min-height: 80vh;
 }
 #event-list {
   background-color: #ffffff;

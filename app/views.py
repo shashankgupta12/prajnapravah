@@ -76,6 +76,10 @@ def index():
 def mission():
 	return render_template('mission.html', title='Our Mission | ')
 
+@app.route('/founders')
+def founders():
+	return render_template('founders.html', title='Our Founders | ')
+
 @app.route('/events')
 def events():
 	return render_template('events.html', title='Events | ')
