@@ -82,7 +82,7 @@
                  <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <p class="text-justify text-center fadeInDown wow">
-                        Prajna Pravah is rational umbrella that stimulates, trains and synthesizes individuals to recognize the inherent strength of Bharath with academic vigor directed towards decolonizing Indian minds from Eurocentric impact. It functions with the sole vision of uplifting and reviving Hinduness in culture for emancipation of humanity. Hindutva being assimilative and self-sustaining has the potential to liberate world from arrogance of power accumulated through dictatorship policies of the west. Prajna Pravah upholds the vision of incorporating the theme of nationalism in spiritual terms so that national intellect evolves with broadened dimension lifted above economic and political context.</p>
+                        Prajna Pravah is rational umbrella that stimulates, trains and synthesizes individuals to recognize the inherent strength of Bharath with academic vigor directed towards decolonizing Indian minds from Eurocentric impact. It functions with the sole vision of uplifting and reviving Hinduness in culture for emancipation of humanity. Hindutva being assimilative and self-sustaining has the potential to liberate world from arrogance of power accumulated through dictatorship policies of the west. Prajna Pravah upholds the vision of incorporating the theme of nationalism in spiritual terms so that national intellect evolves with broadened dimension lifted above economic and political context and foster a sense of innovation & creativity towards benign outlook.</p>
                         <div class="col-sm-6">
                             <ul class="nostyle">
                                 <li><i class="fa fa-check-square"></i> Realization of objectives of nationalism &amp patriotism</li>
@@ -96,10 +96,7 @@
                                 <li><i class="fa fa-check-square"></i> Laying spiritual basis for sustainable development in thought process</li>
                             </ul>
                         </div>
-                        <div class="col-sm-6">
-                            <ul class="nostyle">
-                                <li><i class="fa fa-check-square"></i> Fostering sense of innovation & creativity towards benign outlook</li>
-                            </ul>
+                        <div class="pull-right">
                             <a class="btn btn-primary" href="{{ url_for('mission') }}">Learn More</a>   
                         </div>
                     </div>
@@ -111,7 +108,6 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown gallery-title">Facts ABOUT US</h2>
-                <!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
 
             <div class="row text-center">
@@ -148,7 +144,6 @@
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown gallery-title">Gallery</h2>
             </div>
-
             <div class="text-center">
                 <ul class="portfolio-filter">
                     <li><a class="active" href="#" data-filter="*">All</a></li>
@@ -185,11 +180,13 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 wow fadeInLeft">
                     <form action="{{ url_for('index') }}" method="POST" class="subscription-form">
-                        <div class="input-field">
+                        <div class="input-field input-group">
                             <i class="fa fa-envelope-o fa-lg"></i>
                             <input type="email" name="email" class="subscribe" id="subscribe-input" placeholder="Enter your email address..." required="">
-                            <input type="submit" value="SUBSCRIBE" id="mail-submit">
-                        </div>                       
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit" id="mail-submit">SUBSCRIBE</button>
+                            </span>
+                        </div>
                     </form>
                 </div>
 

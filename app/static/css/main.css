@@ -8,7 +8,6 @@ body {
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
-  overflow-y:hidden;
 }
 h1,
 h2,
@@ -170,7 +169,7 @@ ul.nostyle i {
 /*       16. Preloader CSS      */
 /* -----------------------------------  */
 #preloader{
-position:absolute;
+position:fixed;
 left:0;
 top:0;
 width:100%;
@@ -864,12 +863,9 @@ li.dropdown:hover > .dropdown-menu {
 }
 .subscription-form #mail-submit {
   background-color: #00c7fc;
-  border: 0 none;
+  border: 1px solid;
   color: #fff;
-  padding: 16px 35px;
-  position: absolute;
-  right: 1px;
-  top: 1px;
+  padding: 18px 35px;
 }
 .progress {
   -webkit-box-shadow: none;
