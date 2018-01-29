@@ -2,6 +2,7 @@
 virtual/
 __pycache__/
 py3env/
+extraData/
 .DS_Store
 *.pyc
 app/__pycache__/
