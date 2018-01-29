@@ -217,6 +217,10 @@ def ebooks():
 	ebooks = sorted(bookList, key=lambda x: x[1]) if bookList else []
 	return render_template('ebooks.html', title='Ebooks | ', ebooks=ebooks)
 
+@app.route('/tweets')
+def tweets():
+	return render_template('tweets.html', title='Tweets by Prajna Pravah | ')
+
 @app.errorhandler(500)
 def internal_server_error(e):
 	return render_template('error.html', title='Internal Server Error | ', code=500, error_code='Internal Server Error'), 500

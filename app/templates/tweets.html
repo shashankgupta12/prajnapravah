@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ebooks.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css"/>
+
+{% endblock %}
+
+{% block body %}
+
+	<section id="ebooks-section">
+		<div class="container">
+		    <h2 class="section-title text-center wow fadeInDown gallery-title text-white">TWEETS</h2>
+		    <br>
+			<div class="widget latest-posts card card-01" id="myTweets" style="float:left">
+				<a class="twitter-timeline" data-width="auto" data-height="400" data-chrome="nofooter" data-theme="light" href="https://twitter.com/prajnapravah"></a>
+			</div>
+
+			<div class="widget latest-posts card card-01" id="myTweets" style="float:center">
+				<a class="twitter-timeline" data-width="auto" data-height="400" data-chrome="nofooter" data-theme="light" href="https://twitter.com/kumarnandaj"></a>
+			</div>
+
+			<div class="widget latest-posts card card-01" id="myTweets" style="float:right">
+				<a class="twitter-timeline" data-width="auto" data-height="400" data-chrome="nofooter" data-theme="light" href="https://twitter.com/DrAdwitiya"></a>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+
+{% block script %}
+	
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/ebooks.js') }}"></script>
+
+{% endblock %}
