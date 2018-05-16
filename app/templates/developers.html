@@ -1,10 +1,25 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/prettyPhoto.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+</head>
+<body>
 
-{% block stylesheet %}
-{% endblock %}
-
-{% block body %}
-	<section id="meet-team">
+    <section id="meet-team">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Meet The Developer Team</h2>
@@ -24,6 +39,7 @@
                         <p><i>Database Manager &amp; Content Developer</i> for Web-based scenarios. <i>Application-based Researcher</i> focused on performance analysis of energy efficient wireless sensor &amp; adhoc networks, cognitive networks, data aggregation/prediction techniques with confluence of sensor-based applications with social networking and social sensing.</p>
                         <ul class="social-icons">
                             <li><a href="https://twitter.com/dradwitiya" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.dradwitiya.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
                             <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
                         </ul>
                     </div>
@@ -57,17 +73,28 @@
                         </div>
                         <p><i>Avid Python coder</i> with an in-depth understanding of internal structure &amp; working of python. <i>Core Researcher</i> in the field of Machine Learning, Artificial Intelligence, and Software Development. <i>Backend Developer</i> for generating a stable base for the front-end data storage extended with Cloud-based technologies</p>
                         <ul class="social-icons">
-                            <li><a href="https://www.facebook.com/Shashank12Gupta" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/shashnk_gupta" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://plus.google.com/+ShashankGupta_Shanki" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://www.pydea.org/" target="_blank"><i class="fa fa-globe"></i></a></li>
+                            <li><a href="https://github.com/shashankgupta12" target="_blank"><i class="fa fa-github"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/shashankgupta12/"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://twitter.com/shashnk_gupta" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>                
             </div>
         </div>
     </section><!--/#meet-team-->
-{% endblock %}
 
-{% block script %}
-{% endblock %}
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mousescroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+</body>
+</html>

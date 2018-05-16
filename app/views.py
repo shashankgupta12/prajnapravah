@@ -164,7 +164,7 @@ def contactUs():
 
 @app.route('/developers')
 def developers():
-	return render_template('developers.html', title='Meet the Developers | ')
+	return render_template('developers.html', title='Meet the Developers')
 
 @app.route('/article')
 def article():
