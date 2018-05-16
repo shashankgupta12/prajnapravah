@@ -22,11 +22,11 @@
 				</div>
 				</br></br>
 				<div class="row">
-				{% for filename, title, authors in ebooks %}
+				{% for filename, bookTitle, authors in ebooks %}
 					<div class="col-md-2 text-center ebook-container">
-						<a class="downloadStart" href="{{ url_for('static', filename='ebooks/{0}'.format(filename)) }}" title="{{title}}" Download>
+						<a class="downloadStart" href="{{ url_for('static', filename='ebooks/{0}'.format(filename)) }}" title="{{bookTitle}}" Download>
 							<i class="fa fa-file-pdf-o fa-5x" aria-hidden="true"></i>
-							<h3>{{ title }}</h3>
+							<h3>{{ bookTitle }}</h3>
 							<p>Author(s) : <strong>{{ authors }}</strong></p>
 						</a>
 					</div>					
