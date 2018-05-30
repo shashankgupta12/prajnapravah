@@ -40,6 +40,10 @@ def index():
 		recipients.append(email)
 
 		try:
+			msg = Message('Subscription successful', sender="prajnaanalytica@gmail.com", recipients=recipients)
+			msg.body = "You have successfully subscribed to www.prajnapravah.com"
+			mail.send(msg)
+
 			db = mysql.connect()
 			cur = db.cursor()
 			cur.execute("insert into subscribers (email) values ('{0}')".format(email))
@@ -47,10 +51,6 @@ def index():
 			db.close()
 			
 			flash('subscribed')
-
-			msg = Message('Subscription successful', sender="prajnaanalytica@gmail.com", recipients=recipients)
-			msg.body = "You have successfully subscribed to www.prajnapravah.com"
-			mail.send(msg)
 		
 		except pymysql.err.IntegrityError:
 			flash('already-subscriber')
