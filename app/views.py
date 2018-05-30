@@ -19,13 +19,14 @@ app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
 
 mysql = MySQL(app)
 
+# Initializing Sender Details
 app.config['SECRET_KEY'] = 'YouKnowNothingJonSnow'
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'jnudurgapuja@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Antara@1991'
+app.config['MAIL_USERNAME'] = 'prajnaanalytica@gmail.com'
+app.config['MAIL_PASSWORD'] = 'qxpbhwgmoqswqnlh'
 
 mail = Mail(app)
 
@@ -47,7 +48,7 @@ def index():
 			
 			flash('subscribed')
 
-			msg = Message('Subscription successful', sender="jnudurgapuja@gmail.com", recipients=recipients)
+			msg = Message('Subscription successful', sender="prajnaanalytica@gmail.com", recipients=recipients)
 			msg.body = "You have successfully subscribed to www.prajnapravah.com"
 			mail.send(msg)
 		
@@ -152,7 +153,7 @@ def contactUs():
 		phone = request.form['phone']
 		message = request.form['message']
 
-		msg = Message('{0} | {1}'.format(name, phone), sender="jnudurgapuja@gmail.com", recipients=["meetthedevelopers@gmail.com"])
+		msg = Message('{0} | {1}'.format(name, phone), sender="prajnaanalytica@gmail.com", recipients=["prajnapravah01@gmail.com"])
 		msg.body = "Name: {0}\nEmail: {1}\nPhone No.: {2}\nMessage: {3}".format(name, email, phone, message)
 		mail.send(msg)
 
