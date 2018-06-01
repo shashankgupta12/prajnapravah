@@ -7,15 +7,15 @@ import requests
 
 app = Flask(__name__)
 
-# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-# app.config['MYSQL_DATABASE_USER'] = 'root'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-# app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
 
-app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
-app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
-app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
+# app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
+# app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
+# app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
 
 mysql = MySQL(app)
 
@@ -235,5 +235,5 @@ def page_not_found(e):
 	return render_template('error.html', title='Page Not Found | ', code=404, error_code=e), 404
 
 if __name__ == '__main__':
-	app.run()
-	# app.run(debug=True)
+	# app.run()
+	app.run(debug=True)
