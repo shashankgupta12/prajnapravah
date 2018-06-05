@@ -145,7 +145,6 @@ li.dropdown:hover > .dropdown-menu{display:block;}
 #work-process .icon-circle{display:inline-block;width:80px;height:80px;line-height:80px;border:2px solid #45aed6;border-radius:100px;position:relative;}
 #work-process .icon-circle > span{border-style:solid;border-width:2px;border-color:#45aed6;border-radius:50%;background-color:#fff;position:absolute;width:24px;height:24px;line-height:20px;top:-12px;color:#64686d;}
 #work-process h3{margin-bottom:50px;}
-#meet-team{padding:50px 0;}
 .team-member-col{padding:10px;}
 #meet-team .team-member{padding:13px;background:#eeeeee;border:2px solid #eeeeee;transition:border-color 400ms;-webkit-transition:border-color 400ms;}
 #meet-team .team-member .team-img{margin:-15px -15px 0 -15px;}
