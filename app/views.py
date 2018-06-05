@@ -1,25 +1,24 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flaskext.mysql import MySQL
 from flask_mail import Mail, Message
+from flask_compress import Compress
+from flask_htmlmin import HTMLMIN
 import pymysql
 import os
 import requests
 
 app = Flask(__name__)
 
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
+# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+# app.config['MYSQL_DATABASE_USER'] = 'root'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+# app.config['MYSaQL_DATABASE_DB'] = 'pragyapravah'
 
-# app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
-# app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
-# app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
+app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
+app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
+app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
 
-mysql = MySQL(app)
-
-# Initializing Sender Details
 app.config['SECRET_KEY'] = 'YouKnowNothingJonSnow'
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -28,7 +27,13 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'prajnaanalytica@gmail.com'
 app.config['MAIL_PASSWORD'] = 'qxpbhwgmoqswqnlh'
 
+app.config['MINIFY_PAGE'] = True
+
+mysql = MySQL(app)
 mail = Mail(app)
+
+Compress(app)
+HTMLMIN(app)
 
 API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
 
@@ -235,5 +240,5 @@ def page_not_found(e):
 	return render_template('error.html', title='Page Not Found | ', code=404, error_code=e), 404
 
 if __name__ == '__main__':
-	# app.run()
-	app.run(debug=True)
+	app.run()
+	# app.run(debug=True)
