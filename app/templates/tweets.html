@@ -14,8 +14,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12 section-header">
 		    		<h2 class="section-title text-center wow fadeInDown gallery-title text-white">TWEETS</h2>
+		    		<br>
 		    	</div>
-		    	<br>
 		    	<div class="col-sm-12 col-md-4 col-lg-4">
 		    		<a class="twitter-timeline" data-width="auto" data-height="400" data-chrome="nofooter" data-theme="light" href="https://twitter.com/prajnapravah"></a>
 		    	</div>
@@ -27,6 +27,7 @@
 		    	</div>
 		    </div>
 		</div>
+		<br>
 	</section>
 
 {% endblock %}
@@ -34,8 +35,5 @@
 {% block script %}
 	
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
-    <script src="{{ url_for('static', filename='js/ebooks.js') }}"></script>
 
 {% endblock %}
