@@ -7,15 +7,15 @@ import requests
 
 app = Flask(__name__)
 
-# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-# app.config['MYSQL_DATABASE_USER'] = 'root'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-# app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
 
-app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
-app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
-app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
+# app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
+# app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
+# app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
 
 mysql = MySQL(app)
 
@@ -204,8 +204,8 @@ def articles():
 	articles = sorted(articleList, key=lambda x: x[2], reverse=True) if articleList else []
 	return render_template('articles.html', title='Articles | ', articles=articles)
 
-@app.route('/ebooks')
-def ebooks():
+@app.route('/newsletters')
+def newsletters():
 	db = mysql.connect()
 	cur = db.cursor()
 	cur.execute('select * from ebooks')
@@ -213,7 +213,7 @@ def ebooks():
 	db.close()
 
 	if not bookList:
-		flash('No ebooks available yet')
+		flash('No newsletters available yet')
 	
 	ebooks = sorted(bookList, key=lambda x: x[1]) if bookList else []
 	return render_template('ebooks.html', title='Ebooks | ', ebooks=ebooks)
@@ -235,5 +235,5 @@ def page_not_found(e):
 	return render_template('error.html', title='Page Not Found | ', code=404, error_code=e), 404
 
 if __name__ == '__main__':
-	app.run()
-	# app.run(debug=True)
+	# app.run()
+	app.run(debug=True)
