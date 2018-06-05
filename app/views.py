@@ -2,12 +2,12 @@ from flask import Flask, render_template, request, flash, redirect, url_for, abo
 from flaskext.mysql import MySQL
 from flask_mail import Mail, Message
 from flask_compress import Compress
+from flask_htmlmin import HTMLMIN
 import pymysql
 import os
 import requests
 
 app = Flask(__name__)
-Compress(app)
 
 # app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 # app.config['MYSQL_DATABASE_USER'] = 'root'
@@ -19,9 +19,6 @@ app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'Yg4cywvU8g'
 app.config['MYSQL_DATABASE_DB'] = 'sql12198115'
 
-mysql = MySQL(app)
-
-# Initializing Sender Details
 app.config['SECRET_KEY'] = 'YouKnowNothingJonSnow'
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -30,7 +27,13 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'prajnaanalytica@gmail.com'
 app.config['MAIL_PASSWORD'] = 'qxpbhwgmoqswqnlh'
 
+app.config['MINIFY_PAGE'] = True
+
+mysql = MySQL(app)
 mail = Mail(app)
+
+Compress(app)
+HTMLMIN(app)
 
 API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
 
