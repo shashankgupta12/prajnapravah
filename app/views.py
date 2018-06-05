@@ -12,7 +12,7 @@ app = Flask(__name__)
 # app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 # app.config['MYSQL_DATABASE_USER'] = 'root'
 # app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-# app.config['MYSaQL_DATABASE_DB'] = 'pragyapravah'
+# app.config['MYSQL_DATABASE_DB'] = 'pragyapravah'
 
 app.config['MYSQL_DATABASE_HOST'] = 'sql12.freesqldatabase.com'
 app.config['MYSQL_DATABASE_USER'] = 'sql12198115'
