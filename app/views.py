@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flaskext.mysql import MySQL
 from flask_mail import Mail, Message
+from flask_compress import Compress
 import pymysql
 import os
 import requests
 
 app = Flask(__name__)
+Compress(app)
 
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['MYSQL_DATABASE_USER'] = 'root'
