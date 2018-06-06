@@ -13,22 +13,28 @@
 					<div class="section-header">
 				        <h2 class="gallery-title section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Join Us</h2>
 				    </div>
-                    
                     <div class="col-md-8 col-sm-8 wow fadeInLeft">
                         <div class="contact-form clearfix">
                             <form action="{{ url_for('contactUs') }}" method="POST">
                                 <div class="input-field">
-                                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                                    <input type="text" class="form-control" name="name" placeholder="Name" required>
                                 </div>
                                 <div class="input-field">
                                     <input type="email" class="form-control" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone no" required>
+                                    <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+                                </div>
+                                <div class="input-field">
+                                    <select class="form-control" id="gender" title="Gender" name="gender">
+                                        <option value="">- Gender -</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
                                 </div>
                                 <div class="input-field">
                                     <select class="form-control" id="age" title="Age group" name="age">
-                                        <option>Age</option>
+                                        <option value="">- Age -</option>
                                         <option value="18 or below">18 or below</option>
                                         <option value="19 - 25">19 - 25</option>
                                         <option value="26 - 35">26 - 35</option>
@@ -47,27 +53,19 @@
                                     <input type="text" class="form-control" name="country" placeholder="Country">
                                 </div>
                                 <div class="input-field">
-                                    <select class="form-control" id="category" title="Select a category" name="cetegory">
-                                        <option>Category</option>
-                                        <option value="Contribute">Contribute</option>
-                                        <option value="Organize">Organize</option>
-                                        <option value="Suggest">Suggest</option>
-                                    </select>
-                                </div>
-                                <div class="input-field">
-                                    <select class="form-control" id="sub-ategory" title="Select a Sub-Category" name="subCategory">
-                                        <option>Sub-category</option>
-                                        <option value="Article Writing">Article Writing</option>
-                                        <option value="Translation">Translation</option>
-                                        <option value="Other">Other Event</option>
-                                        <option value="Workshop">Workshop</option>
-                                        <option value="Seminar">Seminar</option>
-                                        <option value="Symposium">Symposium</option>
-                                        <option value="Conference">Conference</option>
-                                        <option value="Other">Other</option>
-                                        <option value="Feedback to Prajna Pravah">Feedback to Prajna Pravah</option>
-                                        <option value="Feedback to developers">Feedback to developers</option>
+                                    <select class="form-control" id="category" title="Select a Category" name="category">
+                                        <option value="">- Select -</option>
+                                        <option value="Article Writing">Contribute in article writing</option>
+                                        <option value="Translation">Contribute in translation</option>
+                                        <option value="Event">Organize event</option>
+                                        <option value="Workshop">Organize workshop</option>
+                                        <option value="Seminar">Organize seminar</option>
+                                        <option value="Symposium">Organize symposium</option>
+                                        <option value="Conference">Organize conference</option>
+                                        <option value="Feedback to Prajna Pravah">Feedback for Prajna Pravah</option>
+                                        <option value="Feedback to developers">Feedback for developers</option>
                                         <option value="Queries">Queries</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="input-field message">
@@ -75,11 +73,11 @@
                                 </div>
                                 <div class="input-field">
                                     <select class="form-control" id="source" title="How do you know about us" name="source">
-                                        <option>How do you know about us</option>
+                                        <option value="">- How do you know about us -</option>
                                         <option value="Through events">Through events</option>
                                         <option value="Through newspaper">Through newspaper</option>
                                         <option value="Through soical media">Through soical media</option>
-                                        <option value="other">other</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <input type="submit" class="btn btn-blue pull-right" value="SEND MESSAGE" id="msg-submit">

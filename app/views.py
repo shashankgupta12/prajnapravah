@@ -150,16 +150,23 @@ def videos(page=0):
 
 	return render_template('videos.html', title='Videos | ', videos=videos, nxt=nxt, prev=prev)
 
-@app.route('/contact-us', methods=['GET', 'POST'])
-def contactUs():
+@app.route('/join-us', methods=['GET', 'POST'])
+def joinUs():
 	if request.method == 'POST':
 		name = request.form['name']
 		email = request.form['email']
 		phone = request.form['phone']
+		gender = request.form['gender']
+		age = request.form['age']
+		city = request.form['city']
+		state = request.form['state']
+		country = request.form['country']
+		category = request.form['category']
 		message = request.form['message']
+		source = request.form['source']
 
 		msg = Message('{0} | {1}'.format(name, phone), sender="prajnaanalytica@gmail.com", recipients=["prajnapravah01@gmail.com"])
-		msg.body = "Name: {0}\nEmail: {1}\nPhone No.: {2}\nMessage: {3}".format(name, email, phone, message)
+		msg.body = "Name: {0}\nEmail: {1}\nPhone: {2}\nGender: {3}\nAge: {4}\nCity: {5}\nState: {6}\nCountry: {7}\nCategory: {8}\nMessage: {9}\nSource: {10}".format(name, email, phone, gender, age, city, state, country, category, message, source)
 		mail.send(msg)
 
 		flash('Details submitted successfully')
