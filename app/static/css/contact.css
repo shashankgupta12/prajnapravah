@@ -24,6 +24,11 @@
   border-radius: 0;
   height: 52px;
   /*box-shadow: none;*/
+  color: #333333;
+}
+.contact-form .form-control label{
+  color: #333333;
+  font-weight: 400;
 }
 
 .contact-form .message .form-control {
