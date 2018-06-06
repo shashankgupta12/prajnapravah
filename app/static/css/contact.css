@@ -30,6 +30,9 @@
   color: #333333;
   font-weight: 400;
 }
+.contact-form .form-control select{
+  padding: 6px 10px;
+}
 
 .contact-form .message .form-control {
   height: 198px;
