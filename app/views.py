@@ -170,10 +170,10 @@ def joinUs():
 		mail.send(msg)
 
 		flash('Details submitted successfully')
-		return redirect(url_for('contactUs'))
+		return redirect(url_for('joinUs'))
 
 	if request.method == 'GET':
-		return render_template('contactUs.html', title='Contact Us | ')
+		return render_template('contactUs.html', title='Join Us | ')
 
 @app.route('/developers')
 def developers():
