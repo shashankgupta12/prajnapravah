@@ -35,7 +35,7 @@ mail = Mail(app)
 Compress(app)
 HTMLMIN(app)
 
-API_KEY = 'AIzaSyDWEDWFyan0M89K7BsBi8qlB7n3QOi5ykU'
+API_KEY = 'your-key-here'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
